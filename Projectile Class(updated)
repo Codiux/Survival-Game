@@ -1,0 +1,39 @@
+class Projectile : public sf::Drawable {
+    public:
+        Projectile() {
+            //default
+        }
+        Projectile(int x, int y, sf::Vector2f collisionSize, sf::Vector2i mouse, float speed) {
+            pCollisionShape.setPosition(x, y);
+
+            pCollisionShape.setSize(sf::Vector2f(5, 5));
+
+            sf::Vector2f distance(mouse.x - pCollisionShape.getGlobalBounds().top, mouse.y - pCollisionShape.getGlobalBounds().left);
+            
+            float length = sqrt(distance.x * distance.x + distance.y * distance.y);
+
+            velocity = (distance / length) * speed;
+        }
+        void setSize(sf::Vector2f size) {
+            pCollisionShape.setSize(size);
+            pCollisionShape.setOrigin(pCollisionShape.getLocalBounds().width , pCollisionShape.getLocalBounds().height);
+        }
+        void setPosition(int x, int y) {
+            pCollisionShape.setPosition(x, y);
+        }
+        void update(float deltaTime) {
+            sf::Vector2f amplifiedVelocity = sf::Vector2f(velocity.x, velocity.y);
+
+            pCollisionShape.move(amplifiedVelocity * deltaTime);
+
+            std::cout << "x = " << amplifiedVelocity.x << ", y = " << amplifiedVelocity.y << std::endl;
+        }
+    private:
+        virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
+        {
+            target.draw(pCollisionShape, states);
+        }
+        sf::RectangleShape pCollisionShape;
+        sf::Vector2f velocity;
+        float speed;
+};
