@@ -27,7 +27,7 @@ target_link_libraries(
 	sfml-graphics
 	sfml-window
 	sfml-system
-	TGUI
+	tgui
 )
 
 set_target_properties("${PROJECT_NAME}"
