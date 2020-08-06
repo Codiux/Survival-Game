@@ -4,13 +4,17 @@ project(Survival-Game)
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
 
-add_executable("${PROJECT_NAME}" ${SOURCES})
+add_executable(
+	"${PROJECT_NAME}" ${SOURCES} 
+	external/Tily/Tily.cpp
+)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 
 target_include_directories(
 	"${PROJECT_NAME}" PUBLIC
 	include/
+	external/Tily
 )
 
 target_link_directories(
