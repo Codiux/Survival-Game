@@ -1,11 +1,21 @@
 # Survival-Game
+This is a Survival Game named ___.
 
 ## How To Build
-Please copy this to your terminal
-`cd build && cmake .. && make`
+First, clone this repo.
+```
+$ git clone https://github.com/Codiux/Survival-Game.git
+```
+Clone the submodules, since when you clone this repo the submodules aren't included.
+```
+$ git submodule update --init --recursive
+```
+Then build it with the help of cmake, and make
+```
+$ cd build && cmake .. && make
+```
 
-Member lists
-
+## Member lists
 @aketchupdude#3556 - artist, Composer and foley
 @Justin Bisep#4800 - programmer
 @Dracula...#7691 
