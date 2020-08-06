@@ -1,0 +1,3 @@
+[submodule "external/Tily"]
+	path = external/Tily
+	url = https://github.com/dfranx/Tily.git
