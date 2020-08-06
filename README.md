@@ -1,7 +1,7 @@
 # Survival-Game
 This is a Survival Game named ___.
 
-## How To Build
+## How to Build
 First, clone this repo.
 ```
 $ git clone https://github.com/Codiux/Survival-Game.git
@@ -15,7 +15,12 @@ Then build it with the help of cmake, and make
 $ cd build && cmake .. && make
 ```
 
-## Member lists
+### Dependencies
+You need to have the prerequisite below in your system before you can build this.
+- SFML
+- TGUI
+
+## Member List
 @aketchupdude#3556 - artist, Composer and foley
 @Justin Bisep#4800 - programmer
 @Dracula...#7691 
