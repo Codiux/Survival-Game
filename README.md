@@ -1,5 +1,9 @@
 # Survival-Game
 
+## How To Build
+Please copy this to your terminal
+`cd build && cmake .. && make`
+
 Member lists
 
 @aketchupdude#3556 - artist, Composer and foley

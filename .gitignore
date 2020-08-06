@@ -1,3 +1,2 @@
-build/*
-.clangd/
+.clangd
 compile_commands.json
