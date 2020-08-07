@@ -15,6 +15,8 @@ Then build it with the help of cmake, and make
 $ cd build && cmake .. && make
 ```
 
+*Note:* You need to be in Survival-Game directory in order to run this. Because this executable aren't working directory independent yet.
+
 ### Dependencies
 You need to have the prerequisite below in your system before you can build this.
 - SFML
