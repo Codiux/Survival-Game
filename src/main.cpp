@@ -223,7 +223,7 @@ int main()
  //   sf::Sprite alienBG_S(alienBG_TXT);
  //   alienBG_S.scale(window.getSize().x / alienBG_S.getGlobalBounds().width, window.getSize().y / alienBG_S.getGlobalBounds().height);
 
-    tgui::Theme blackTheme{"nanogui.style"};
+    tgui::Theme blackTheme{"assets/nanogui.style"};
 
     tgui::Gui gui{window};
 
@@ -242,6 +242,7 @@ int main()
     Start_BTN->setPosition(15, 25);
     Start_BTN->setSize(250, 50);
     Start_BTN->setText("Start");
+		Start_BTN->connect("Pressed", [&](){MainMenuScene->setVisible(false);});
     Selection_PNL->add(Start_BTN, "Start_BTN");
 
     auto Settings_BTN = tgui::Button::create();
@@ -268,13 +269,14 @@ int main()
     ////////////////////////////////////////////////////////
 
     enum GUI_SCENES_ENUM {
-        MAIN,
+        MENU,
+				MAIN,
         SETTINGS,
         CREDITS
     };
 
     GUI_SCENES_ENUM GUI_SCENES;
-    GUI_SCENES = MAIN;
+    GUI_SCENES = MENU;
 
     sf::Clock clock;
     while(window.isOpen()) {
@@ -306,8 +308,10 @@ int main()
 
         switch(GUI_SCENES)
         {
-            case MAIN:
+            case MENU:
                 break;
+						case MAIN:
+								break;
 
         }
 
